@@ -1,8 +1,12 @@
 import type { Route } from "./+types/home";
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Omar Alamin | Web Developer Portfolio" },
+    {
+      name: "description",
+      content:
+        "Website Developer Omar Alamin's personal portfolio, showcasing his completed projects and top-tier skills in frontend development. Hire me to build your next site.",
+    },
   ];
 }
 
