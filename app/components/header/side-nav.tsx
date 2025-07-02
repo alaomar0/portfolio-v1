@@ -2,7 +2,6 @@ import { cn } from "~/lib/utils";
 import { Link } from "react-router";
 import { Sling as Hamburger } from "hamburger-react";
 import { create } from "zustand";
-import { useEffect } from "react";
 import { LINKS } from "./header";
 
 type SidNavState = {
@@ -27,13 +26,14 @@ export default function SideNav() {
       {/* Side Nav button */}
       <span
         className={cn(
-          "[&>div]:scale-85",
-          "md:hidden [&>div>div]:backdrop-invert-100",
+          "md:hidden",
+          "[&>div]:scale-75",
+          "[&>div>div]:backdrop-invert-100",
         )}
       >
         <Hamburger
           hideOutline={false}
-          size={38}
+          size={48}
           distance="sm"
           label="Show navigation"
           color="none"
@@ -50,7 +50,7 @@ export default function SideNav() {
       <nav
         className={cn(
           // heigth = 100dvh - header-height(48px(hamburger icon size) + 2rem (the top and bottom padding in the header))
-          "absolute top-full right-0 flex h-[calc(100dvh-48px-2rem)] w-0 flex-col overflow-hidden bg-white transition-[width] duration-300 md:hidden dark:bg-black",
+          "absolute top-full right-0 z-10 flex h-[calc(100dvh-48px-2rem)] w-0 flex-col overflow-hidden bg-white transition-[width] duration-300 md:hidden dark:bg-black",
           isOpen && "w-dvw",
         )}
         style={{
@@ -69,7 +69,7 @@ export default function SideNav() {
               <li
                 key={to}
                 className={cn(
-                  "group relative block",
+                  "group",
                   "flex w-full translate-x-full items-center bg-black pl-3 transition-transform duration-300 dark:bg-white",
                   isOpen && "translate-0",
                 )}
@@ -87,6 +87,8 @@ export default function SideNav() {
                   className={cn(
                     "w-full translate-x-full bg-white py-6 pl-4 transition-transform duration-300 dark:bg-black",
                     isOpen && "translate-0",
+                    "after:absolute after:top-1/2 after:left-0 after:h-12 after:w-0 after:-translate-y-1/2 after:backdrop-invert-100 after:transition-[width]",
+                    "hover:after:w-20",
                   )}
                   style={{
                     transitionDelay: isOpen
