@@ -2,6 +2,8 @@ import { cn } from "~/lib/utils";
 import { Link } from "react-router";
 import { Sling as Hamburger } from "hamburger-react";
 import { create } from "zustand";
+import { useEffect } from "react";
+import { LINKS } from "./header";
 
 type SidNavState = {
   isOpen: boolean;
@@ -12,14 +14,6 @@ const useSideNav = create<SidNavState>()((set) => ({
   isOpen: false,
   setIsOpen: (isOpen: boolean) => set(() => ({ isOpen: isOpen })),
 }));
-
-const LINKS = [
-  { name: "Home", to: "/" },
-  { name: "About", to: "/#about" },
-  { name: "Projects", to: "/#projects" },
-  { name: "Skills", to: "/#skills" },
-  { name: "Contact Me", to: "/#contact" },
-];
 
 export default function SideNav() {
   const isOpen = useSideNav((state) => state.isOpen);
@@ -32,9 +26,13 @@ export default function SideNav() {
     <>
       {/* Side Nav button */}
       <span
-        className={cn("[&>div]:scale-85", "[&>div>div]:backdrop-invert-100")}
+        className={cn(
+          "[&>div]:scale-85",
+          "md:hidden [&>div>div]:backdrop-invert-100",
+        )}
       >
         <Hamburger
+          hideOutline={false}
           size={38}
           distance="sm"
           label="Show navigation"
@@ -49,10 +47,10 @@ export default function SideNav() {
       </span>
 
       {/* Side Nav */}
-      <div
+      <nav
         className={cn(
           // heigth = 100dvh - header-height(48px(hamburger icon size) + 2rem (the top and bottom padding in the header))
-          "absolute top-full right-0 flex h-[calc(100dvh-48px-2rem)] w-0 flex-col overflow-hidden bg-white transition-[width] duration-300 dark:bg-black",
+          "absolute top-full right-0 flex h-[calc(100dvh-48px-2rem)] w-0 flex-col overflow-hidden bg-white transition-[width] duration-300 md:hidden dark:bg-black",
           isOpen && "w-dvw",
         )}
         style={{
@@ -61,23 +59,17 @@ export default function SideNav() {
             : `${(LINKS.length - 1) * delay + difference}ms`,
         }}
       >
-        {LINKS.map(({ name, to }, i) => {
-          // Calculate the transition delay based on the index
-          // When Opening, the background div will slide first, then the content div, and the transition will start from the top
-          // When Closing, the content div will slide first, then the background div,  and the transition will start from the bottom
+        <ul>
+          {LINKS.map(({ name, to }, i) => {
+            // Calculate the transition delay based on the index
+            // When Opening, the li element will slide first, then the Link component, and the transition will start from the top
+            // When Closing, the Link component will slide first, then the li element,  and the transition will start from the bottom
 
-          return (
-            <Link
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              to={to}
-              key={to}
-              className="group relative block"
-            >
-              {/* background div */}
-              <div
+            return (
+              <li
+                key={to}
                 className={cn(
+                  "group relative block",
                   "flex w-full translate-x-full items-center bg-black pl-3 transition-transform duration-300 dark:bg-white",
                   isOpen && "translate-0",
                 )}
@@ -87,8 +79,11 @@ export default function SideNav() {
                     : `${(LINKS.length - i) * delay + difference}ms`,
                 }}
               >
-                {/* content div */}
-                <div
+                <Link
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                  to={to}
                   className={cn(
                     "w-full translate-x-full bg-white py-6 pl-4 transition-transform duration-300 dark:bg-black",
                     isOpen && "translate-0",
@@ -102,11 +97,11 @@ export default function SideNav() {
                   <span className="block text-lg font-semibold whitespace-nowrap text-black uppercase transition-transform duration-100 ease-linear group-hover:translate-x-1.5 dark:text-white">
                     {name}
                   </span>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
         <div
           className={cn(
             "grow translate-x-full py-6 pl-7 transition-transform duration-300",
@@ -121,7 +116,7 @@ export default function SideNav() {
           {/* Dark/Light mode switch */}
           {/* <button></button> */}
         </div>
-      </div>
+      </nav>
     </>
   );
 }
