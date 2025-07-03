@@ -1,4 +1,6 @@
+import Hero from "~/components/hero";
 import type { Route } from "./+types/home";
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Omar Alamin | Web Developer Portfolio" },
@@ -11,5 +13,10 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <></>;
+  return (
+    <main className="overflow-hidden text-black md:px-10 dark:text-white">
+      <Hero />
+      <section className=""></section>
+    </main>
+  );
 }
