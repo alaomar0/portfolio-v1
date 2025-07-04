@@ -1,8 +1,10 @@
 import { Link } from "react-router";
+import { cn } from "~/lib/utils";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center gap-20 px-4 py-50 md:gap-29 md:pt-80">
+    <section className="cont-padding cont-max-width flex flex-col items-center gap-20 overflow-hidden py-50 md:gap-29 md:pt-80">
       <h1 className="text-4xl leading-13 font-bold tracking-wide md:text-5xl lg:text-6xl lg:leading-20">
         Omar,
         <span className="inline-block rounded-sm bg-black px-2 text-white dark:bg-white dark:text-black">
@@ -15,25 +17,31 @@ export default function Hero() {
       <span className="relative">
         <Link
           to="/#contact"
-          className="rounded-sm bg-white px-5 py-3 text-xl font-semibold transition duration-200 hover:invert-100 md:px-6 md:py-4 md:text-3xl lg:px-7 lg:text-4xl dark:bg-black"
+          className="rounded-sm bg-white px-5 py-3 text-xl font-semibold transition duration-200 hover:bg-black hover:text-white md:px-6 md:py-4 md:text-3xl lg:px-7 lg:text-4xl dark:bg-black dark:hover:bg-white dark:hover:text-black"
         >
           Contact Me
         </Link>
 
-        {/* First Bar */}
-        <div
-          style={{
-            animationDelay: ".4s",
-          }}
-          className="animate-expand-small md:animate-expand-large absolute -top-130 left-59 -z-10 h-17 w-1 origin-right -rotate-62 bg-black md:-top-165 md:left-77.5 md:h-19 lg:-top-170 lg:left-80.5 lg:h-24 lg:-rotate-61 dark:bg-white"
-        ></div>
-        {/* Second Bar */}
-        <div
-          style={{
-            animationDelay: ".7s",
-          }}
-          className="animate-expand-small md:animate-expand-large absolute -top-130 left-112 -z-10 h-17 w-1 origin-right -rotate-62 bg-black md:-top-165 md:left-148 md:h-19 lg:-top-170 lg:left-166.5 lg:h-24 lg:-rotate-61 dark:bg-white"
-        ></div>
+        {/* Bars */}
+        {[
+          "-right-11 md:-right-14 lg:-right-13",
+          "-right-65  md:-right-84 lg:-right-99",
+        ].map((v, i) => (
+          <motion.div
+            transition={{
+              duration: 0.6,
+              delay: (i + 1) * 0.3,
+              ease: [0.15, 0.85, 0.35, 1],
+            }}
+            key={i}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            className={cn(
+              "absolute bottom-104 -z-10 h-17 w-145 origin-right -rotate-62 bg-black md:bottom-140 md:h-19 md:w-192 lg:bottom-155 lg:h-24 lg:w-210 lg:-rotate-61 dark:bg-white",
+              v,
+            )}
+          ></motion.div>
+        ))}
       </span>
     </section>
   );

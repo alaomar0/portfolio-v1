@@ -1,31 +1,15 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --animate-expand-small: expand-small 0.3s cubic-bezier(0.15, 0.85, 0.35, 1)
-    forwards;
-  --animate-expand-large: expand-large 0.3s cubic-bezier(0.15, 0.85, 0.35, 1)
-    forwards;
-  @keyframes expand-small {
-    0% {
-      scale: 1;
-    }
-
-    100% {
-      scale: 165 1;
+@layer components {
+  .cont-max-width {
+    max-width: 2000px;
+    margin-inline: auto;
+  }
+  .cont-padding {
+    padding-inline: 1rem;
+    @variant md {
+      padding-inline: 3.5rem;
     }
   }
-  @keyframes expand-large {
-    0% {
-      scale: 1;
-    }
-
-    100% {
-      scale: 220 1;
-    }
-  }
-}
-
-body {
-  font-family: monospace;
 }

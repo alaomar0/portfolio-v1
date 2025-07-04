@@ -51,7 +51,7 @@ export default function SideNav() {
       <nav
         className={cn(
           // heigth = 100dvh - header-height(48px(hamburger icon size) + 2rem (the top and bottom padding in the header))
-          "absolute top-full right-0 z-10 flex h-[calc(100dvh-48px-2rem)] w-0 flex-col overflow-hidden bg-white transition-[width] duration-300 md:hidden dark:bg-black",
+          "absolute top-full right-0 z-30 flex h-[calc(100dvh-48px-2rem)] w-0 flex-col overflow-hidden bg-white transition-[width] duration-300 md:hidden dark:bg-black",
           isOpen && "w-dvw",
         )}
         style={{
