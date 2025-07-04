@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { Sling as Hamburger } from "hamburger-react";
 import { create } from "zustand";
 import { LINKS } from "./header";
+import ThemeToggleButton from "./theme-toggle-btn";
 
 type SidNavState = {
   isOpen: boolean;
@@ -116,7 +117,7 @@ export default function SideNav() {
           }}
         >
           {/* Dark/Light mode switch */}
-          {/* <button></button> */}
+          <ThemeToggleButton />
         </div>
       </nav>
     </>
