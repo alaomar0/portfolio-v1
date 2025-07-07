@@ -25,13 +25,7 @@ export default function SideNav() {
   return (
     <>
       {/* Side Nav button */}
-      <span
-        className={cn(
-          "md:hidden",
-          "[&>div]:scale-75",
-          "[&>div>div]:backdrop-invert-100",
-        )}
-      >
+      <span className="md:hidden [&>div]:scale-75 [&>div>div]:backdrop-invert-100">
         <Hamburger
           hideOutline={false}
           size={48}
