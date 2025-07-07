@@ -24,21 +24,21 @@ export default function Hero() {
 
         {/* Bars */}
         {[
-          "-right-11 md:-right-14 lg:-right-13",
-          "-right-65  md:-right-84 lg:-right-99",
-        ].map((v, i) => (
+          "-right-15.5 md:-right-14 lg:-right-13",
+          "-right-69  md:-right-84 lg:-right-99",
+        ].map((c, i) => (
           <motion.div
             transition={{
               duration: 0.6,
-              delay: (i + 1) * 0.3,
+              delay: i * 0.3,
               ease: [0.15, 0.85, 0.35, 1],
             }}
             key={i}
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             className={cn(
-              "absolute bottom-104 -z-10 h-17 w-145 origin-right -rotate-62 bg-black md:bottom-140 md:h-19 md:w-192 lg:bottom-155 lg:h-24 lg:w-210 lg:-rotate-61 dark:bg-white",
-              v,
+              "absolute bottom-112 -z-10 h-17 w-145 origin-right -rotate-62 bg-black md:bottom-140 md:h-19 md:w-192 lg:bottom-155 lg:h-24 lg:w-210 lg:-rotate-61 dark:bg-white",
+              c,
             )}
           ></motion.div>
         ))}
