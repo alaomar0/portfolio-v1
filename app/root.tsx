@@ -33,9 +33,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
         <script>
           {/* update color theme on load*/}
-          document.documentElement.classList.toggle( "dark", localStorage.theme
-          === "dark" || (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches),);
+          {`
+            try {
+              if (
+                localStorage.theme === 'dark' ||
+                (
+                  !('theme' in localStorage) &&
+                  window.matchMedia('(prefers-color-scheme: dark)').matches
+                )
+              ) {
+                document.documentElement.classList.add('dark')
+              }
+            } catch (_) {}
+          `}
         </script>
       </head>
       <body className="bg-white font-mono text-black dark:bg-black dark:text-white">

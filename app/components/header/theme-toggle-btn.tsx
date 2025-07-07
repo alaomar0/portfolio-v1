@@ -20,7 +20,7 @@ export default function ThemeToggleButton() {
       onClick={() => {
         toggleTheme();
       }}
-      className="size-8 cursor-pointer bg-white ring-1 ring-black dark:bg-black dark:ring-white"
+      className="size-8 cursor-pointer border-1 border-black bg-white dark:border-white dark:bg-black"
     ></button>
   );
 }
