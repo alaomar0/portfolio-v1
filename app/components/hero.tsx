@@ -14,7 +14,7 @@ export default function Hero() {
         Web <span className="text-white uppercase dark:text-black">Dev</span>
         eloper
       </h1>
-      <span className="relative">
+      <span className="relative -z-10">
         <Link
           to="/#contact"
           className="rounded-sm bg-white px-5 py-3 text-xl font-semibold transition duration-200 hover:bg-black hover:text-white md:px-6 md:py-4 md:text-3xl lg:px-7 lg:text-4xl dark:bg-black dark:hover:bg-white dark:hover:text-black"
@@ -37,7 +37,7 @@ export default function Hero() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             className={cn(
-              "absolute bottom-112 -z-10 h-17 w-145 origin-right -rotate-62 bg-black md:bottom-140 md:h-19 md:w-192 lg:bottom-155 lg:h-24 lg:w-210 lg:-rotate-61 dark:bg-white",
+              "absolute bottom-112 h-17 w-145 origin-right -rotate-62 bg-black md:bottom-140 md:h-19 md:w-192 lg:bottom-155 lg:h-24 lg:w-210 lg:-rotate-61 dark:bg-white",
               c,
             )}
           ></motion.div>

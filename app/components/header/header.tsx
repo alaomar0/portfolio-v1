@@ -2,6 +2,10 @@ import { Link } from "react-router";
 import logo from "/app/assets/logo.svg";
 import SideNav from "./side-nav";
 import ThemeToggleButton from "./theme-toggle-btn";
+import { cn } from "~/lib/utils";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { useState } from "react";
+import SideNavBtn from "./side-nav-btn";
 
 export const LINKS = [
   { name: "About", to: "/#about" },
@@ -11,17 +15,34 @@ export const LINKS = [
 ];
 
 export default function Header() {
+  const { scrollY } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (current) => {
+    setScrolled(current > 0);
+  });
+
   return (
-    <header className="cont-padding absolute w-full py-4 md:py-5 lg:py-8">
+    <header
+      className={cn(
+        "cont-padding absolute z-30 w-full bg-transparent py-4 transition-colors duration-300 md:z-auto md:py-5 lg:py-8",
+        scrolled && "fixed bg-white dark:bg-black",
+      )}
+    >
       <div className="cont-max-width flex justify-between">
         <Link to="/" className="self-center">
           <img src={logo} alt="logo" className="w-12 md:w-14" />
         </Link>
-        {/* Small screens Navigation menu */}
-        <SideNav />
+        {/* Side Nav button (for small screens nav) */}
+        <SideNavBtn />
+        {/* Large screens Navigation menu */}
         <div className="hidden items-center gap-8 md:flex">
-          {/* Large screens Navigation menu */}
-          <nav className="mix-blend-difference">
+          <nav
+            className={cn(
+              "mix-blend-difference",
+              scrolled && "mix-blend-normal",
+            )}
+          >
             <ul className="flex h-full gap-6 lg:gap-8">
               {LINKS.map(({ name, to }, i) => (
                 <li key={to} className="group relative h-full">
@@ -31,7 +52,7 @@ export default function Header() {
                   >
                     {name}
                   </Link>
-                  <div className="absolute top-1/2 -right-[5px] -z-10 h-8 w-0 -translate-y-1/2 bg-white transition-[width] group-hover:-left-[5px] group-hover:w-[calc(100%+10px)]" />
+                  <div className="absolute top-1/2 -right-[5px] -z-10 h-8 w-0 -translate-y-1/2 bg-white mix-blend-difference transition-[width] group-hover:-left-[5px] group-hover:w-[calc(100%+10px)]" />
                 </li>
               ))}
             </ul>
@@ -40,6 +61,8 @@ export default function Header() {
           <ThemeToggleButton />
         </div>
       </div>
+      {/* Small screens Navigation menu */}
+      <SideNav />
     </header>
   );
 }
