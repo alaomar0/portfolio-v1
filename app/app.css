@@ -23,4 +23,32 @@
     text-transform: uppercase;
     margin-block: 10px;
   }
+
+  /*flex aspect-[0.7] w-24 flex-col items-center justify-evenly rounded-sm border-2 border-black bg-white text-xs md:w-28 md:text-sm dark:border-white dark:bg-black*/
+  .skill-card {
+    display: flex;
+    aspect-ratio: 0.7;
+    width: 6rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: var(--radius-sm);
+    border-width: 2px;
+    border-color: black;
+    background-color: white;
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+    @variant md {
+      width: 7rem;
+      font-size: var(--text-sm) /* 0.875rem = 14px */;
+      line-height: var(
+        --tw-leading,
+        var(--text-sm--line-height) /* calc(1.25 / 0.875) ≈ 1.4286 */
+      );
+    }
+    @variant dark {
+      border-color: white;
+      background: black;
+    }
+  }
 }
