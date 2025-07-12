@@ -26,7 +26,7 @@ export default function Header() {
     <header
       className={cn(
         "cont-padding absolute z-30 w-full bg-transparent py-4 transition-colors duration-300 md:z-auto md:py-5 lg:py-8",
-        scrolled && "fixed bg-white dark:bg-black",
+        scrolled && "fixed bg-white md:z-30 dark:bg-black",
       )}
     >
       <div className="cont-max-width flex justify-between">
