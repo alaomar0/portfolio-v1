@@ -19,8 +19,9 @@ import reactrouterLightLogo from "~/assets/images/skills/reactrouter/light.png";
 import reactrouterDarkLogo from "~/assets/images/skills/reactrouter/dark.png";
 import firebaseLogo from "~/assets/images/skills/firebase-logo.png";
 import zustandLogo from "~/assets/images/skills/zustand-logo.svg";
+import viteLogo from "~/assets/images/skills/vite-logo.png";
 import { cn } from "~/lib/utils";
-import { easeInOut, easeOut, motion } from "motion/react";
+import { easeOut, motion } from "motion/react";
 
 type Skill = {
   name: string;
@@ -110,6 +111,11 @@ const SKILLS: Skill[] = [
     name: "Zustand",
     imgSrc: { light: zustandLogo },
     link: "https://zustand-demo.pmnd.rs/",
+  },
+  {
+    name: "Vite",
+    imgSrc: { light: viteLogo },
+    link: "https://vite.dev/",
   },
 ];
 
