@@ -113,12 +113,10 @@ const SKILLS: Skill[] = [
   },
 ];
 
-//Todo: add prisma, postgresql
-
 export default function Skills() {
   return (
     <section id="skills" className="cont-padding py-10">
-      <h1 className="section-header cont-max-width mb-5">Skills</h1>
+      <h1 className="section-header cont-max-width mb-8">Skills</h1>
 
       <SkillsList />
     </section>

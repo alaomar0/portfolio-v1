@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="cont-padding overflow-hidden bg-black py-6 dark:bg-white"
+      className="cont-padding overflow-hidden bg-black py-6 md:py-10 lg:py-15 dark:bg-white"
     >
       <div className="cont-max-width">
         <div className="relative w-fit">
@@ -29,7 +29,7 @@ export default function About() {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            className="absolute top-1/2 -left-2 h-[calc(100%+10px)] w-[calc(100%+30px)] origin-left -translate-y-1/2 bg-white dark:bg-black"
+            className="absolute top-1/2 -left-2 h-[calc(100%+10px)] w-[calc(100%+60px)] origin-left -translate-y-1/2 bg-white md:h-[calc(100%+30px)] lg:h-[calc(100%+50px)] dark:bg-black"
           ></motion.div>
         </div>
       </div>

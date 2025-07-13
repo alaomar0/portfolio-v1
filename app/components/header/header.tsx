@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "cont-padding absolute z-30 w-full bg-transparent py-4 transition-colors duration-300 md:z-auto md:py-5 lg:py-8",
+        "cont-padding absolute z-30 w-full bg-transparent py-4 transition-colors duration-300 md:z-auto md:py-5 lg:py-5",
         scrolled && "fixed bg-white md:z-30 dark:bg-black",
       )}
     >
@@ -48,7 +48,7 @@ export default function Header() {
                 <li key={to} className="group relative h-full">
                   <Link
                     to={to}
-                    className="flex h-full w-full items-center text-xl font-semibold text-white uppercase mix-blend-difference lg:text-2xl"
+                    className="flex h-full w-full text-xl font-semibold text-white uppercase mix-blend-difference lg:text-2xl"
                   >
                     {name}
                   </Link>
