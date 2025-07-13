@@ -48,7 +48,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           `}
         </script>
       </head>
-      <body className="bg-white font-mono text-black dark:bg-black dark:text-white">
+      <body className="font-main bg-white text-black dark:bg-black dark:text-white">
         <Header />
         {children}
         <ScrollRestoration />

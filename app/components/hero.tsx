@@ -18,7 +18,7 @@ export default function Hero() {
         <span className="relative">
           <Link
             to="/#contact"
-            className="block rounded-tl-sm rounded-br-sm bg-white px-5 py-3 text-xl font-semibold hover:bg-black hover:text-white hover:transition hover:duration-200 md:px-6 md:py-4 md:text-3xl lg:px-7 lg:text-4xl dark:bg-black dark:hover:bg-white dark:hover:text-black"
+            className="block rounded-tl-sm rounded-br-sm bg-white px-5 py-2.5 text-xl font-semibold hover:bg-black hover:text-white hover:transition hover:duration-200 md:px-6 md:py-4 md:text-3xl lg:px-7 lg:text-4xl dark:bg-black dark:hover:bg-white dark:hover:text-black"
           >
             Contact Me
           </Link>
@@ -28,13 +28,13 @@ export default function Hero() {
           Bar*2 => left = 100% - (cont-height*tan(90 + rotate-angle)) note: if you noticed, the rotate-angle is negative
           */}
           {[
-            "-left-[calc(4.25rem/0.9)] md:-left-[calc(4.75rem/0.9)] lg:-left-[calc(5.75rem/0.89)]",
-            "left-[calc(100%-(3.25rem*0.466))] md:left-[calc(100%-(4.25rem*0.466))] lg:left-[calc(100%-(4.5rem*0.5))]",
+            "-left-[calc(4.25rem/0.866)] md:-left-[calc(5.5rem/0.866)] lg:-left-[calc(7rem/0.829)]",
+            "left-[calc(100%-(3rem*0.577))] md:left-[calc(100%-(4.25rem*0.577))] lg:left-[calc(100%-(4.5rem*0.674))]",
           ].map((c, i) => (
             <div
               key={i}
               className={cn(
-                "absolute -z-10 origin-top-left -rotate-65 lg:-rotate-63",
+                "absolute -z-10 origin-top-left -rotate-60 lg:-rotate-56",
                 c,
               )}
             >
@@ -46,7 +46,7 @@ export default function Hero() {
                 }}
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                className="h-17 w-160 origin-right -translate-x-10 bg-black md:h-19 md:w-200 lg:h-23 lg:w-220 dark:bg-white"
+                className="h-17 w-165 origin-right -translate-x-10 bg-black md:h-22 md:w-205 lg:h-28 lg:w-235 dark:bg-white"
               ></motion.div>
             </div>
           ))}

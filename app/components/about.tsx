@@ -8,8 +8,8 @@ export default function About() {
     >
       <div className="cont-max-width">
         <div className="relative w-fit">
-          <div className="relative z-10 w-fit">
-            <h1 className="section-header">About</h1>
+          <div className="relative z-10 w-fit md:text-xl">
+            <h1 className="section-header md:mb-4">About</h1>
             <p className="max-w-2xl">
               My Name is name is{" "}
               <span className="text-xl font-bold">Omar Alamin</span>, I’m a
@@ -29,7 +29,7 @@ export default function About() {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            className="absolute top-1/2 -left-2 h-[calc(100%+10px)] w-[calc(100%+60px)] origin-left -translate-y-1/2 bg-white md:h-[calc(100%+30px)] lg:h-[calc(100%+50px)] dark:bg-black"
+            className="absolute top-1/2 -left-2 h-[calc(100%+10px)] w-[calc(100%+60px)] origin-left -translate-y-1/2 bg-white md:-left-6 md:h-[calc(100%+30px)] lg:h-[calc(100%+50px)] dark:bg-black"
           ></motion.div>
         </div>
       </div>
