@@ -10,6 +10,8 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import Header from "./components/header/header";
+import { Toaster } from "sonner";
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -49,6 +51,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </script>
       </head>
       <body className="font-main bg-white text-black dark:bg-black dark:text-white">
+        <Toaster expand={true} position="bottom-right" />
         <Header />
         {children}
         <ScrollRestoration />
