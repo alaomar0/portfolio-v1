@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import Hero from "~/components/hero";
 import About from "~/components/about";
 import Skills from "~/components/skills";
+import Projects from "~/components/projects";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -19,6 +20,7 @@ export default function Home() {
     <main>
       <Hero />
       <About />
+      <Projects />
       <Skills />
     </main>
   );

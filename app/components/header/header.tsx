@@ -48,7 +48,7 @@ export default function Header() {
                 <li key={to} className="group relative h-full">
                   <Link
                     to={to}
-                    className="flex h-full w-full text-xl font-semibold text-white uppercase mix-blend-difference lg:text-2xl"
+                    className="flex h-full w-full font-semibold text-white uppercase mix-blend-difference lg:text-xl"
                   >
                     {name}
                   </Link>
