@@ -6,6 +6,7 @@ import { cn } from "~/lib/utils";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
 import SideNavBtn from "./side-nav-btn";
+import ScrollProgress from "./scroll-progress";
 
 export const LINKS = [
   { name: "About", to: "/#about" },
@@ -29,6 +30,7 @@ export default function Header() {
         scrolled && "fixed bg-white md:z-30 dark:bg-black",
       )}
     >
+      <ScrollProgress />
       <div className="cont-max-width flex justify-between">
         <Link aria-label="Home" to="/" className="self-center">
           <img src={logo} alt="logo" className="w-12 md:w-14" />
