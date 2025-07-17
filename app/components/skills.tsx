@@ -178,10 +178,15 @@ function SkillsList() {
           {row.map(({ name, imgSrc, link }, j) => {
             // Skill
             return (
-              <Link to={link} key={name} className="skill-card">
+              <Link
+                to={link}
+                key={name}
+                className="skill-card"
+                aria-label={name}
+              >
                 <img
                   src={imgSrc.light}
-                  alt={name}
+                  alt="skill icon"
                   className={cn(
                     "size-15 object-contain",
                     imgSrc.dark && "dark:hidden",
@@ -190,7 +195,7 @@ function SkillsList() {
                 {imgSrc.dark && (
                   <img
                     src={imgSrc.dark}
-                    alt={name}
+                    alt="skill icon"
                     className="hidden size-15 object-contain dark:block"
                   />
                 )}

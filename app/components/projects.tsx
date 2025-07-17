@@ -87,12 +87,23 @@ function Project({
       <div className="flex flex-col gap-6 p-4">
         <div className="flex gap-4">
           {typeof repoLink === "string" ? (
-            <a href={repoLink} rel="noopener noreferrer" target="_blank">
+            <a
+              aria-label="Github repository"
+              href={repoLink}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <FaGithub size={25} />
             </a>
           ) : (
             repoLink.map((link, i) => (
-              <a href={link} rel="noopener noreferrer" target="_blank" key={i}>
+              <a
+                aria-label="Github repository"
+                href={link}
+                rel="noopener noreferrer"
+                target="_blank"
+                key={i}
+              >
                 <FaGithub size={25} />
               </a>
             ))

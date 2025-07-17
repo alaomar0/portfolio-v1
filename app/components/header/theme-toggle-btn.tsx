@@ -17,6 +17,7 @@ export default function ThemeToggleButton() {
 
   return (
     <button
+      aria-label="Toggle theme color"
       onClick={() => {
         toggleTheme();
       }}

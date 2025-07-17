@@ -17,6 +17,7 @@ export default function Hero() {
         </h1>
         <span className="relative">
           <Link
+            aria-label="Contact Me"
             to="/#contact"
             className="block rounded-tl-sm rounded-br-sm bg-white px-5 py-2.5 text-xl font-semibold hover:bg-black hover:text-white hover:transition hover:duration-200 md:px-6 md:py-4 md:text-2xl lg:px-7 lg:text-3xl dark:bg-black dark:hover:bg-white dark:hover:text-black"
           >

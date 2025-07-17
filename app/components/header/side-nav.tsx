@@ -55,6 +55,7 @@ export default function SideNav() {
               }}
             >
               <Link
+                aria-label={name}
                 onClick={() => {
                   setIsOpen(false);
                 }}

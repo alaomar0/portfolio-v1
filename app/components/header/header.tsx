@@ -30,7 +30,7 @@ export default function Header() {
       )}
     >
       <div className="cont-max-width flex justify-between">
-        <Link to="/" className="self-center">
+        <Link aria-label="Home" to="/" className="self-center">
           <img src={logo} alt="logo" className="w-12 md:w-14" />
         </Link>
         {/* Side Nav button (for small screens nav) */}
