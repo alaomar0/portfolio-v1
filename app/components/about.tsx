@@ -9,7 +9,7 @@ export default function About() {
       <div className="cont-max-width">
         <div className="relative w-fit">
           <div className="relative z-10 w-fit md:text-xl">
-            <h1 className="section-header md:mb-4">About</h1>
+            <h1 className="section-header max-md:mb-2.5">About</h1>
             <p className="max-w-2xl">
               My Name is name is{" "}
               <span className="text-xl font-bold">Omar Alamin</span>, I’m a

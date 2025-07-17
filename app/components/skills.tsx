@@ -121,8 +121,8 @@ const SKILLS: Skill[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="cont-padding py-10">
-      <h1 className="section-header cont-max-width mb-8">Skills</h1>
+    <section id="skills" className="cont-padding">
+      <h1 className="section-header cont-max-width">Skills</h1>
 
       <SkillsList />
     </section>

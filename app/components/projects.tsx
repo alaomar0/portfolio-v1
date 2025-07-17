@@ -50,9 +50,9 @@ const PROJECTSLIST: ProjectCard[] = [
 
 export default function Projects() {
   return (
-    <section className="cont-padding py-10" id="projects">
+    <section className="cont-padding" id="projects">
       <div className="cont-max-width">
-        <h1 className="section-header mb-8">Projects</h1>
+        <h1 className="section-header">Projects</h1>
         <div className="flex flex-col gap-20">
           {PROJECTSLIST.map((project, i) => (
             <Project project={project} key={i} />
