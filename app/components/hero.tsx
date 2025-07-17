@@ -4,11 +4,11 @@ import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="cont-padding cont-max-width flex h-lvh overflow-hidden pt-65 md:pt-80">
-      <div className="flex w-full flex-col items-center gap-20 md:gap-29">
+    <section className="cont-padding cont-max-width flex min-h-lvh overflow-hidden pt-65 pb-40 md:pt-80">
+      <div className="flex w-full flex-col items-center gap-22 md:gap-30">
         <h1 className="text-4xl leading-13 font-bold tracking-wide md:text-5xl lg:text-6xl lg:leading-20">
           Omar,
-          <span className="inline-block rounded-sm bg-black px-2 text-white md:py-2 lg:px-3 dark:bg-white dark:text-black">
+          <span className="isolate text-white mix-blend-difference">
             Front-end
           </span>
           <br />
@@ -18,7 +18,7 @@ export default function Hero() {
         <span className="relative">
           <Link
             to="/#contact"
-            className="block rounded-tl-sm rounded-br-sm bg-white px-5 py-2.5 text-xl font-semibold hover:bg-black hover:text-white hover:transition hover:duration-200 md:px-6 md:py-4 md:text-3xl lg:px-7 lg:text-4xl dark:bg-black dark:hover:bg-white dark:hover:text-black"
+            className="block rounded-tl-sm rounded-br-sm bg-white px-5 py-2.5 text-xl font-semibold hover:bg-black hover:text-white hover:transition hover:duration-200 md:px-6 md:py-4 md:text-2xl lg:px-7 lg:text-3xl dark:bg-black dark:hover:bg-white dark:hover:text-black"
           >
             Contact Me
           </Link>
