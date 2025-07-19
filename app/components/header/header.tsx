@@ -18,9 +18,13 @@ export const LINKS = [
 export default function Header() {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (current) => {
     setScrolled(current > 0);
+
+    if (hasScrolled) return;
+    setHasScrolled(current > 0);
   });
 
   return (
@@ -30,7 +34,7 @@ export default function Header() {
         scrolled && "fixed bg-white md:z-30 dark:bg-black",
       )}
     >
-      <ScrollProgress />
+      {hasScrolled && <ScrollProgress />}
       <div className="cont-max-width flex justify-between">
         <Link aria-label="Home" to="/" className="self-center">
           <img src={logo} alt="logo" className="w-12 md:w-14" />
