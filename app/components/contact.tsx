@@ -112,7 +112,7 @@ export default function Contact() {
                 <div>
                   <textarea
                     id="message"
-                    className="peer"
+                    className="peer max-h-60 min-h-14"
                     placeholder=" "
                     {...register("message", {
                       required: "Enter your Message",

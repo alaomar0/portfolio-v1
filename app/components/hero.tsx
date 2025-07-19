@@ -30,7 +30,7 @@ export default function Hero() {
           */}
           {[
             "-left-[calc(4.25rem/0.866)] md:-left-[calc(5.5rem/0.866)] lg:-left-[calc(7rem/0.829)]",
-            "left-[calc(100%-(3rem*0.577))] md:left-[calc(100%-(4.25rem*0.577))] lg:left-[calc(100%-(4.5rem*0.674))]",
+            "left-[calc(100%-(3rem*0.577))] md:left-[calc(100%-(4rem*0.577))] lg:left-[calc(100%-(4.25rem*0.674))]",
           ].map((c, i) => (
             <div
               key={i}
